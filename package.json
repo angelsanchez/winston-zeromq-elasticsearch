@@ -1,6 +1,6 @@
 {
   "name": "winston-zeromq-elasticsearch",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A ZeroMQ-ElasticSearch transport for Winston.",
   "main": "./lib/winston-zeromq-elasticsearch",
   "repository": {
