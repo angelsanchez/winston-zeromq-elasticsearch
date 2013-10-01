@@ -1,10 +1,10 @@
 var winston = require('winston');
 
-require('../lib/winston-zeromq-elasticsearch').ZMQ_ES;
+require('../lib/winston-zeromq-elasticsearch').ZeroMQElasticSearch;
 
 var logger = new winston.Logger ({
   transports : [
-    new winston.transports.ZMQ_ES({
+    new winston.transports.ZeroMQElasticSearch({
       socketAddress : 'tcp://0.0.0.0:9700'
     }),
     new winston.transports.Console ({

@@ -1,7 +1,7 @@
 winston-zeromq-elasticsearch
 ============================
 
-A ZeroMQ-ElasticSearch transport for Winston.
+A ZeroMQ-ElasticSearch transport for Winston. Sends the messages to save using a ZeroMQ PUSH socket. The message format is compatible with LogStash.
 
 ## Usage
 
@@ -14,11 +14,11 @@ Basic example:
 ```js
 var winston = require('winston');
 
-require('winston-zeromq-elasticsearch').ZMQ_ES;
+require('winston-zeromq-elasticsearch').ZeroMQElasticSearch;
 
 var logger = new winston.Logger ({
   transports : [
-    new winston.transports.ZMQ_ES({
+    new winston.transports.ZeroMQElasticSearch({
       socketAddress : 'tcp://0.0.0.0:9700'
     }),
     new winston.transports.Console ({
