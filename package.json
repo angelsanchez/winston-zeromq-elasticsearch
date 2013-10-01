@@ -1,0 +1,28 @@
+{
+  "name": "winston-zeromq-elasticsearch",
+  "version": "0.0.1",
+  "description": "A ZeroMQ-ElasticSearch transport for Winston.",
+  "main": "./lib/winston-zeromq-elasticsearch",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IGZangelsanchez/winston-zeromq-elasticsearch.git"
+  },
+  "keywords": [
+    "winston",
+    "elasticsearch",
+    "zeromq",
+    "nodejs"
+  ],
+  "author": "Angel Sanchez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IGZangelsanchez/winston-zeromq-elasticsearch/issues"
+  },
+  "dependencies": {
+    "winston": "~0.7.2",
+    "zmq": "~2.5.1"
+  }
+}

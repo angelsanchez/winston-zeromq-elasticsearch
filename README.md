@@ -1,4 +1,4 @@
 winston-zeromq-elasticsearch
 ============================
 
-A ZeroMQ-Elastic search transport for Winston.
+A ZeroMQ-ElasticSearch transport for Winston.
