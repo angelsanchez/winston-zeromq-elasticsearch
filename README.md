@@ -1,18 +1,21 @@
 winston-zeromq-elasticsearch
 ============================
 
-A ZeroMQ-ElasticSearch transport for Winston. Sends the messages to save using a ZeroMQ PUSH socket. The message format is compatible with LogStash.
+A [ZeroMQ-ElasticSearch](https://github.com/bpaquet/transport-zeromq) transport for [Winston](https://github.com/flatiron/winston). Sends the messages to save using a [ZeroMQ](http://zeromq.org/) PUSH socket. The message format is compatible with [LogStash](http://logstash.net/).
 
 ## Usage
 
-Install the npm dependency:
-```js
-npm install wiston-zeromq-elasticsearch
-```
+### Options
+
+This winston transport takes the following options:
+
+ - __level__: Level of messages that this transport should log. (default 'debug')
+ - __silent__: Boolean flag indicating whether to suppress output. (default false)
+ - __socketAddress__: The ZeroMQ socket address yo want to send to.
 
 ### Using the Default Logger
 
-```
+```js
 var winston = require('winston');
 
 require('winston-zeromq-elasticsearch').ZeroMQElasticSearch;
@@ -44,13 +47,7 @@ logger.info('Hello world!');
 
 ```
 
-## Options
 
-This winston transport takes the following options:
-
- - __level__: Level of messages that this transport should log. (default 'debug')
- - __silent__: Boolean flag indicating whether to suppress output. (default false)
- - __socketAddress__: The ZeroMQ socket address yo want to send to.
 
 ## Environment
 
@@ -62,4 +59,6 @@ This winston transport takes the following options:
 You can manage the saved logs using [Kibana](http://www.elasticsearch.org/overview/kibana/installation/)
 
 
-__Author:__ [Angel Sanchez](http://www.thegameofcode.com/)
+#### Author: [Angel Sanchez](http://www.thegameofcode.com/)
+
+#### License: MIT
