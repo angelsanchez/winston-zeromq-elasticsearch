@@ -10,7 +10,23 @@ Install the npm dependency:
 npm install wiston-zeromq-elasticsearch
 ```
 
-Basic example:
+### Using the Default Logger
+
+```
+var winston = require('winston');
+
+require('winston-zeromq-elasticsearch').ZeroMQElasticSearch;
+
+winston.add(winston.transports.ZeroMQElasticSearch,
+    { socketAddress: 'tcp://0.0.0.0:9700' });
+
+winston.info('Hello world!');
+
+```
+
+
+### Using your own Logger
+
 ```js
 var winston = require('winston');
 
@@ -20,24 +36,21 @@ var logger = new winston.Logger ({
   transports : [
     new winston.transports.ZeroMQElasticSearch({
       socketAddress : 'tcp://0.0.0.0:9700'
-    }),
-    new winston.transports.Console ({
-      json : false,
-      timestamp : true
     })
   ]
 });
 
-logger.on('error', function (err) {
-  throw err;
-});
+logger.info('Hello world!');
 
-setInterval(function () {
-  
-  logger.info('Info message!');
-
-}, 1000);
 ```
+
+## Options
+
+This winston transport takes the following options:
+
+ - __level__: Level of messages that this transport should log. (default 'debug')
+ - __silent__: Boolean flag indicating whether to suppress output. (default false)
+ - __socketAddress__: The ZeroMQ socket address yo want to send to.
 
 ## Environment
 

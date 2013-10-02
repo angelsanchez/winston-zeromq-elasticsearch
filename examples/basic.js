@@ -2,24 +2,11 @@ var winston = require('winston');
 
 require('../lib/winston-zeromq-elasticsearch').ZeroMQElasticSearch;
 
-var logger = new winston.Logger ({
-  transports : [
-    new winston.transports.ZeroMQElasticSearch({
-      socketAddress : 'tcp://0.0.0.0:9700'
-    }),
-    new winston.transports.Console ({
-      json : false,
-      timestamp : true
-    })
-  ]
-});
-
-logger.on('error', function (err) {
-  throw err;
-});
+winston.add(winston.transports.ZeroMQElasticSearch, { level: 'warn', socketAddress: 'tcp://0.0.0.0:9700' });
 
 setInterval(function () {
   
-  logger.info('Info message from basic example');
+  winston.info('This message will not send!');
+  winston.warn('Hello from basic example!', { anything: 'This is metadata' });
 
 }, 1000);
