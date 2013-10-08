@@ -3,6 +3,15 @@ winston-zeromq-elasticsearch
 
 A [ZeroMQ-ElasticSearch](https://github.com/bpaquet/transport-zeromq) transport for [Winston](https://github.com/flatiron/winston). Sends the messages to save using a [ZeroMQ](http://zeromq.org/) PUSH socket. The message format is compatible with [LogStash](http://logstash.net/).
 
+## Installation
+
+### Installing winston-zeromq-elasticsearch
+
+```bash
+ $ npm install winston
+ $ npm install winston-zeromq-elasticsearch
+```
+
 ## Usage
 
 ### Options
@@ -18,6 +27,10 @@ This winston transport takes the following options:
 ```js
 var winston = require('winston');
 
+//
+// Requiring `winston-zeromq-elasticsearch` will expose 
+// `winston.transports.ZeroMQElasticSearch`
+//
 require('winston-zeromq-elasticsearch').ZeroMQElasticSearch;
 
 winston.add(winston.transports.ZeroMQElasticSearch,
@@ -33,6 +46,10 @@ winston.info('Hello world!');
 ```js
 var winston = require('winston');
 
+//
+// Requiring `winston-zeromq-elasticsearch` will expose 
+// `winston.transports.ZeroMQElasticSearch`
+//
 require('winston-zeromq-elasticsearch').ZeroMQElasticSearch;
 
 var logger = new winston.Logger ({
@@ -46,7 +63,6 @@ var logger = new winston.Logger ({
 logger.info('Hello world!');
 
 ```
-
 
 
 ## Environment
