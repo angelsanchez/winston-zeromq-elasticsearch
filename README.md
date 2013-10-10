@@ -17,10 +17,10 @@ A [ZeroMQ-ElasticSearch](https://github.com/bpaquet/transport-zeromq) transport 
 ### Options
 
 This winston transport takes the following options:
-
+ - __socketAddress__: The ZeroMQ socket address you want to send to.
  - __level__: Level of messages that this transport should log. (default 'debug')
  - __silent__: Boolean flag indicating whether to suppress output. (default false)
- - __socketAddress__: The ZeroMQ socket address yo want to send to.
+ - __metadata__: Default metadata to be added on each log entry. (default {})
 
 ### Using the Default Logger
 
